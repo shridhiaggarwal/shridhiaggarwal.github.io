@@ -340,10 +340,6 @@ header {
 }
 
 /* ============================== about section css ============================== */
-.aboutSection {
-  text-align: justify;
-}
-
 .aboutSectionLine {
   width: 300px;
   height: 100%;
@@ -351,6 +347,7 @@ header {
 
 .aboutContent {
   padding-bottom: 16px;
+  text-align: justify;
 }
 
 .skillsTitle {
@@ -714,7 +711,7 @@ header {
     object-fit: cover;
     width: 100%;
   }
-  .aboutSection {
+  .aboutContent {
     text-align: initial;
   }
   .skillsImages img {
