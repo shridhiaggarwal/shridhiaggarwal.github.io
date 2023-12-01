@@ -251,7 +251,7 @@ header {
   position: absolute;
   bottom: 80px;
   left: 10px;
-  rotate: -15deg;
+  transform: rotate(-15deg);
   /* animation: wiggleDrift 10s ease-in-out infinite; */
 }
 
