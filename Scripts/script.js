@@ -136,3 +136,7 @@ window.addEventListener("scroll", () => {
 //         header.style.boxShadow = 'none';
 //     }
 // });
+
+/* ========================================== dynamic footer year  ========================================== */
+const currentYear = new Date().getFullYear();
+document.getElementById("currentYear").textContent = currentYear;
