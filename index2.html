@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Experience Slider</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a2e;
+            color: #ffffff;
+            margin: 0;
+            padding: 2rem;
+        }
+
+        .experience-section {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .tablist {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-bottom: 2rem;
+            padding: 0;
+            list-style: none;
+        }
+
+        button[role="tab"] {
+            background: none;
+            border: none;
+            color: #aaa;
+            font-size: 1rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            transition: color 0.3s ease;
+        }
+
+        button[role="tab"]:hover,
+        button[role="tab"]:focus {
+            color: #fff;
+        }
+
+        button[role="tab"][aria-selected="true"] {
+            color: #fff;
+            font-weight: bold;
+            position: relative;
+        }
+
+        button[role="tab"]:focus {
+            outline: 2px dashed #fff;
+            outline-offset: 4px;
+        }
+
+        .rocket {
+            position: absolute;
+            bottom: -10px;
+            height: 30px;
+            width: 30px;
+            background: url('https://www.svgrepo.com/show/1320/rocket.svg') no-repeat center/contain;
+            transition: transform 0.3s ease;
+        }
+
+        [role="tabpanel"] {
+            display: none;
+            text-align: left;
+        }
+
+        [role="tabpanel"]:not([hidden]) {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="experience-section">
+        <h1>Work Experience</h1>
+        <div class="tablist" role="tablist" aria-label="Work Experience">
+            <button role="tab" aria-selected="true" aria-controls="tab-1" id="tab-btn-1" tabindex="0">
+                Compro Technologies
+            </button>
+            <button role="tab" aria-selected="false" aria-controls="tab-2" id="tab-btn-2" tabindex="-1">
+                Women Who Code
+            </button>
+            <button role="tab" aria-selected="false" aria-controls="tab-3" id="tab-btn-3" tabindex="-1">
+                SheltOwn
+            </button>
+            <button role="tab" aria-selected="false" aria-controls="tab-4" id="tab-btn-4" tabindex="-1">
+                Arbunize
+            </button>
+            <div class="rocket" aria-hidden="true"></div>
+        </div>
+
+        <div id="tab-1" role="tabpanel" aria-labelledby="tab-btn-1">
+            <h2>Software Engineer</h2>
+            <p>July 2022 - Present</p>
+            <ul>
+                <li>Developed core containers and components for Engage, Spark, and VHL Imagebook.</li>
+                <li>Collaborated to apply OWASP protection methods, achieving 100/100 on Mozilla Observatory.</li>
+                <li>Enhanced Bonsai search automated indexing for seamless integration.</li>
+            </ul>
+        </div>
+        <div id="tab-2" role="tabpanel" aria-labelledby="tab-btn-2" hidden>
+            <h2>Lead - Frontend Track</h2>
+            <p>August 2022 - August 2023</p>
+            <ul>
+                <li>Introduced Frontend Friday challenges for collaborative learning.</li>
+                <li>Facilitated events and supported the Frontend Track Fellow Lead tasks.</li>
+            </ul>
+        </div>
+        <div id="tab-3" role="tabpanel" aria-labelledby="tab-btn-3" hidden>
+            <h2>Web Developer Intern</h2>
+            <p>May 2020 - July 2020</p>
+            <ul>
+                <li>Co-led and managed a team of 6 interns (frontend).</li>
+                <li>Analyzed and documented product requirements.</li>
+            </ul>
+        </div>
+        <div id="tab-4" role="tabpanel" aria-labelledby="tab-btn-4" hidden>
+            <h2>Junior Developer</h2>
+            <p>July 2021 - December 2021</p>
+            <ul>
+                <li>Developed scalable web applications using React.js.</li>
+                <li>Optimized application performance and accessibility for a broader audience.</li>
+            </ul>
+        </div>
+    </section>
+
+    <script>
+        // script.js
+        const tabs = document.querySelectorAll('[role="tab"]');
+        const panels = document.querySelectorAll('[role="tabpanel"]');
+        const rocket = document.querySelector('.rocket');
+
+        tabs.forEach((tab, index) => {
+            tab.addEventListener('click', () => {
+                // Update tab selection
+                tabs.forEach((t) => {
+                    t.setAttribute('aria-selected', 'false');
+                    t.setAttribute('tabindex', '-1');
+                });
+                tab.setAttribute('aria-selected', 'true');
+                tab.setAttribute('tabindex', '0');
+
+                // Update panel visibility
+                panels.forEach((panel) => (panel.hidden = true));
+                const targetPanel = document.getElementById(tab.getAttribute('aria-controls'));
+                targetPanel.hidden = false;
+
+                // Move the rocket
+                const tabRect = tab.getBoundingClientRect();
+                const tablistRect = tab.parentElement.getBoundingClientRect();
+                rocket.style.transform = `translateX(${tabRect.left - tablistRect.left + tabRect.width / 2 - 15}px)`;
+            });
+
+            // Keyboard navigation (Arrow and Enter keys)
+            tab.addEventListener('keydown', (e) => {
+                let newIndex;
+                if (e.key === 'ArrowRight') {
+                    newIndex = (index + 1) % tabs.length;
+                } else if (e.key === 'ArrowLeft') {
+                    newIndex = (index - 1 + tabs.length) % tabs.length;
+                } else if (e.key === 'Enter') {
+                    // Select tab and show content when Enter is pressed
+                    tab.click();
+                    return;
+                } else {
+                    return;
+                }
+                tabs[newIndex].focus();
+                tabs[newIndex].click();
+            });
+        });
+    </script>
+</body>
+
+</html>
