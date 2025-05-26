@@ -37,7 +37,24 @@ function stars() {
     window.addEventListener('resize', updateStars);
 
 }
-stars();
+
+stars(); // Call the stars function to create stars on page load
+
+// Function to hide stars container without deleting elements
+function hideStars() {
+    const starContainers = document.querySelectorAll('#stars i');
+    for (let i = 0; i < starContainers.length; i++) {
+        starContainers[i].style.display = 'none'; // Hide the stars instead of removing them
+    }
+}
+
+// Function to show stars container
+function showStars() {
+    const starContainers = document.querySelectorAll('#stars i');
+    for (let i = 0; i < starContainers.length; i++) {
+        starContainers[i].style.display = 'block'; // show the stars instead of creating them
+    }
+}
 
 /* ==========================================  show more projects and less projects  ========================================== */
 document.addEventListener("DOMContentLoaded", function () {
@@ -66,20 +83,20 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /* ==========================================  navlist toggle button  ========================================== */
-const toggleButton = document.querySelector(".toggleButton");
+const navToggleButton = document.querySelector(".navToggleButton");
 const navList = document.querySelector(".navList");
 let navListOpen = false;
 
-toggleButton.addEventListener("click", () => {
+navToggleButton.addEventListener("click", () => {
     if (window.innerWidth <= 768) {
-        if(!navListOpen){
+        if (!navListOpen) {
             navList.style.display = "flex";
             navListOpen = true;
-            toggleButton.children[0].src = "Images/cross.png";
-        } else{
+            navToggleButton.children[0].src = "Images/cross.png";
+        } else {
             navList.style.display = "none";
             navListOpen = false;
-            toggleButton.children[0].src = "Images/menuBar.svg";
+            navToggleButton.children[0].src = "Images/menuBar.svg";
         }
     }
 });

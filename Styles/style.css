@@ -2,14 +2,21 @@
   --sm: 576px;
   --md: 768px;
   --lg: 1024px;
-  /* colors - scrollbar theme*/
-  --scroll-bar-color: #b0b0b0;
-  --scroll-bar-bg-color: #171c28;
 }
 
 [data-theme="light"] {
-  --color-bg: #ffffff;
-  --color-fg: #000000;
+  --background-color: #ffffff; /* white  */
+  --background-text: #000000; /* black */
+  --background-text2: #4a4a4a; /* Quartz */
+  --primary-container: #4a4a4a; /* dark-jungle-green */
+  --primary-text: #bababa; /* platinum - all pass with primary*/
+  --secondary-container: #00819d; /* cg blue */
+  --secondary-text: #ffffff; /* white */
+  --tertiary-container: #006b85; /* sea blue */
+  --tertiary-text: #ffffff; /* white */
+  /* colors - scrollbar theme*/
+  --scroll-bar-color: #666666; /* Granite Gray */
+  --scroll-bar-bg-color: #ffffff; /* white */
 }
 
 [data-theme="dark"] {
@@ -22,6 +29,9 @@
   --secondary-text: #e7e7e7; /* platinum - works AA with secondary*/
   --tertiary-container: #1e407f; /* dark-cornflower-blue */
   --tertiary-text: #e7e7e7; /* platinum - all pass with tertiary*/
+  /* colors - scrollbar theme*/
+  --scroll-bar-color: #b0b0b0; /* Silver Foil */
+  --scroll-bar-bg-color: #171c28; /* dark-jungle-green */
 }
 
 /* page start - 2.5 rem - 40px
@@ -91,6 +101,14 @@ html::-webkit-scrollbar-thumb {
   line-height: 1.5rem;
 }
 
+[data-theme="light"] .commonSection .sectionTitle:not(.viewResumeTitle) {
+  padding-bottom: 10px;
+  border-bottom: 6px dashed var(--secondary-container);
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
 .sectionSubtitle {
   font-size: 1.5rem;
   font-family: "Roboto", sans-serif;
@@ -115,6 +133,10 @@ html::-webkit-scrollbar-thumb {
   display: none !important;
 }
 
+[data-theme="light"] .LineImage {
+  display: none !important;
+}
+
 /* ============================== header section css ============================== */
 header {
   position: fixed;
@@ -124,6 +146,7 @@ header {
   width: 100%;
   height: 72px;
   background-color: var(--background-color);
+  z-index: 9;
 }
 
 .logo {
@@ -155,11 +178,11 @@ header {
   color: var(--tertiary-text);
 }
 
-.navlink:hover {
-  /* text-decoration: none; */
+[data-theme="light"] .navlink {
+  color: var(--secondary-text);
 }
 
-.toggleButton {
+.navToggleButton {
   display: none;
   background-color: transparent;
   border: none;
@@ -178,24 +201,27 @@ header {
 }
 
 .themeToggleBtn {
-  background: none;
+  background-color: var(--secondary-container);
+  padding: 8px;
   border: none;
+  border-radius: 50%;
+  margin-right: 16px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 8px;
-  border-radius: 50%;
   transition: background-color 0.3s ease;
 }
 
 .themeToggleBtn:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--tertiary-container);
+  color: var(--tertiary-text);
 }
 
 .themeIcon {
   width: 20px;
   height: 20px;
+  fill: var(--secondary-text);
 }
 
 /* ============================== home section css ============================== */
@@ -268,6 +294,12 @@ header {
   line-height: 0.75rem;
 }
 
+[data-theme="light"] .introEmail {
+  padding-bottom: 8px;
+  padding-top: 8px;
+  border-bottom: 4px dashed var(--secondary-container);
+}
+
 .introPlanet {
   position: absolute;
   top: 80px;
@@ -301,6 +333,39 @@ header {
   opacity: 1;
   transition: opacity 3s ease-in-out;
   /* animation: blink 6s infinite; */
+}
+
+[data-theme="light"] .introClouds {
+  position: absolute;
+  width: 400px;
+  top: 520px;
+  left: 16px;
+}
+
+[data-theme="dark"] .introClouds {
+  display: none;
+}
+
+[data-theme="light"] .introSun {
+  position: absolute;
+  width: 400px;
+  top: 80px;
+  right: 16px;
+}
+
+[data-theme="dark"] .introSun {
+  display: none;
+}
+
+[data-theme="light"] .introBirds {
+  position: absolute;
+  width: 300px;
+  top: 520px;
+  right: 1px;
+}
+
+[data-theme="dark"] .introBirds {
+  display: none;
 }
 
 @keyframes blink {
@@ -585,6 +650,10 @@ header {
   transform: scale(1.05);
 }
 
+[data-theme="light"] .contactImages a {
+  color: var(--secondary-text);
+}
+
 /* ============================== footer section css ============================== */
 .footerSection {
   padding-top: 0px;
@@ -696,7 +765,7 @@ header {
     margin-right: 0px;
     transition: transform 0.5s;
   }
-  .toggleButton {
+  .navToggleButton {
     display: block;
   }
 }
@@ -743,6 +812,9 @@ header {
   .LineImage {
     object-fit: cover;
     width: 100%;
+  }
+  [data-theme="light"] .LineImage {
+    display: none !important;
   }
   .aboutContent {
     text-align: initial;

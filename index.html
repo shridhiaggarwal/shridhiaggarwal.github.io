@@ -28,7 +28,6 @@
 
     <!-- css link -->
     <link rel="stylesheet" type="text/css" href="Styles/style.css">
-    <!-- <link rel="stylesheet" type="text/css" href="Styles/light-theme.css"> -->
 
     <!-- fonts link -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,7 +46,7 @@
             </a>
         </div>
         <nav>
-            <button class="toggleButton">
+            <button class="navToggleButton">
                 <img width="30" height="30" src="Images/menuBar.svg" alt="menuBar">
             </button>
             <ul class="navList">
@@ -80,22 +79,22 @@
                         <div class="navPill">Contact</div>
                     </a>
                 </li>
-                <!-- <li>
+                <li>
                     <button id="themeToggle" class="themeToggleBtn" aria-label="Toggle theme">
                         <img id="themeIcon" src="Images/moon.svg" alt="Dark mode" class="themeIcon">
                     </button>
-                </li> -->
+                </li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <!-- home section -->
+        <!-- home or intro section -->
         <section id="stars" class="introSection">
             <div class="introSectionContent">
                 <div class="introHelloDiv">
                     <h1 class="introHello">Hello!</h1>
-                    <img class="introWaveImage" src="Images/wave.gif" alt="">
+                    <img class="introWaveImage" src="Images/intro/wave.gif" alt="">
                 </div>
                 <h2 class="introLine">I'm <span class="myName">Shridhi Aggarwal</span>, a dedicated front-end software
                     engineer who likes to craft beautiful interfaces and enjoyable experiences.</h2>
@@ -103,7 +102,7 @@
                     engineer who enjoys crafting beautiful web application frontends.</h2> -->
                 <div class="introContact">
                     <p>Get in touch</p>
-                    <img class="pointRightImage" src="Images/pointRight.png" alt="">
+                    <img class="pointRightImage" src="Images/intro/pointRight.png" alt="">
                     <div>
                         <a href="mailto:shridhiaggarwal.work@gmail.com" target="_blank" class="link">
                             <p class="introEmail">shridhiaggarwal.work@gmail.com</p>
@@ -112,10 +111,13 @@
                     </div>
                 </div>
             </div>
-            <!-- <img class="introPlanet" src="Images/planet.png" alt="planet image">
-            <img class="introRocket" src="Images/rocket.png" alt="rocket image">
-            <img class="introStarConstellation1" src="Images/starConstellation1.png" alt="star constellation image">
-            <img class="introStarConstellation2" src="Images/starConstellation2.png" alt="star constellation image 2"> -->
+            <!-- <img class="introPlanet" src="Images/intro/planet.png" alt="planet image">
+            <img class="introRocket" src="Images/intro/rocket.png" alt="rocket image">
+            <img class="introStarConstellation1" src="Images/intro/starConstellation1.png" alt="star constellation image">
+            <img class="introStarConstellation2" src="Images/intro/starConstellation2.png" alt="star constellation image 2"> -->
+            <img class="introSun" src="Images/intro/sunClouds.png" alt="smiley sun image">
+            <img class="introClouds" src="Images/intro/clouds.png" alt="clouds image">
+            <img class="introBirds" src="Images/intro/birds.png" alt="clouds image">
         </section>
 
 
@@ -125,11 +127,13 @@
                 <h2 class="sectionTitle">About Me</h2>
                 <img class="LineImage" src="Images/line2.png" alt="">
             </div>
-            <p class="sectionContent aboutContent">Hello there! 👋 I'm Shridhi, a <strong>software engineer</strong>
+            <p class="sectionContent aboutContent">Hello there! 👋 I'm Shridhi, a <strong>senior software
+                    engineer</strong>
                 with
                 knowledge of JavaScript and TypeScript. My forte lies in <strong>frontend development</strong>, where I
                 excel in
-                React.js, Redux, and more. Seeing my work live on the web makes me happy. That is why I love FrontEnd! ✨
+                HTML, CSS, React.js, Redux, Vue, Nuxt and more. Seeing my work live on the web makes me happy. That is
+                why I love FrontEnd! ✨
             </p>
             <p class="sectionContent aboutContent">For the past couple of years, I've been a proud member of the
                 <strong>Compro Technologies</strong> team, where I've honed my skills and made a real impact. I've
@@ -601,6 +605,7 @@
             alt="scroll to top button">
     </button>
 
+    <script src="Scripts/theme.js"></script>
     <script src="Scripts/script.js"></script>
 </body>
 
