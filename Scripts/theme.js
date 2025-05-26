@@ -26,11 +26,11 @@ class ThemeManager {
         // Update the icon based on current theme
         if (themeIcon) {
             if (theme === 'dark') {
-                themeIcon.src = 'Images/sun.svg'; // Show sun icon in dark mode
+                themeIcon.src = 'Images/header/sun.svg'; // Show sun icon in dark mode
                 themeIcon.alt = 'Light mode';
                 showStars(); // Call stars function if it exists
             } else {
-                themeIcon.src = 'Images/moon.svg'; // Show moon icon in light mode
+                themeIcon.src = 'Images/header/moon.svg'; // Show moon icon in light mode
                 themeIcon.alt = 'Dark mode';
                 hideStars(); // Call createStars function if it exists
             }

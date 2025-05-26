@@ -691,6 +691,9 @@ header {
   .introSectionContent {
     padding: 40px;
   }
+  /* [data-theme="light"] .introClouds {
+    top: 540px;
+  } */
   .experienceBoxLeftSide {
     padding-right: 40px;
   }
@@ -706,6 +709,9 @@ header {
   }
   .introSectionContent {
     padding: 40px;
+  }
+  [data-theme="light"] .introClouds {
+    display: none;
   }
   .experienceBoxLeftSide {
     padding-right: 40px;
@@ -728,6 +734,12 @@ header {
 }
 
 @media screen and (max-width: 768px) {
+  [data-theme="light"] .introSun {
+    display: none;
+  }
+  [data-theme="light"] .introBirds {
+    display: none;
+  }
   .experienceBox {
     flex-direction: column;
   }
@@ -756,10 +768,11 @@ header {
     left: 0;
     width: 100%;
     background-color: var(--background-color);
+    color: var(--background-text);
     display: none;
   }
   .navPill {
-    background-color: transparent;
+    /* background-color: transparent; */
     padding: 16px 24px;
     border-radius: 0px;
     margin-right: 0px;
@@ -776,6 +789,9 @@ header {
   }
   .sectionTitle {
     font-size: 1.5rem;
+  }
+  [data-theme="light"] .commonSection .sectionTitle:not(.viewResumeTitle) {
+    width: unset;
   }
   .sectionSubtitle {
     font-size: 1.125rem;
