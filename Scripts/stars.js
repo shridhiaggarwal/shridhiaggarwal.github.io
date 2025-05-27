@@ -1,4 +1,4 @@
-/* ==========================================  stars background  ========================================== */
+// stars.js - Star background
 function stars() {
     let count = 30;
     const starsContainer = document.getElementById('stars');

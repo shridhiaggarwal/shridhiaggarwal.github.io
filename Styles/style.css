@@ -682,6 +682,11 @@ header {
   height: 100%;
 }
 
+[data-theme="light"] #scrollToTopBtn img {
+  width: 64px;
+  height: 100%;
+}
+
 /* ============================== media query css ============================== */
 
 @media screen and (min-width: 993px) and (max-width: 1200px) {
@@ -852,9 +857,9 @@ header {
     flex-wrap: wrap;
     grid-gap: 16px 0px;
   }
-  #scrollToTopBtn {
+  /* #scrollToTopBtn {
     width: 40px;
     height: 40px;
     bottom: 40px;
-  }
+  } */
 }

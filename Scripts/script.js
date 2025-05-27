@@ -24,16 +24,36 @@ document.addEventListener("DOMContentLoaded", function () {
     showHideButton.addEventListener("click", toggleHiddenProjects);
 });
 
+//update logo icon based on theme
+function updateLogoIcon(theme) {
+    const logoBtn = document.getElementById('logo');
+    const logoIcon = logoBtn?.querySelector('img');
 
-/* ========================================== header box shadow after scrolling past 100vh  ========================================== */
-// window.addEventListener('scroll', function() {
+    if (!logoIcon) {
+        console.warn('logo icon image not found');
+        return;
+    }
+
+    if (theme === 'dark') {
+        logoIcon.src = 'Images/logo.png';
+    } else {
+        logoIcon.src = 'Images/logoLight.png';
+    }
+}
+
+
+// header box shadow after scrolling past 100vh
+// function addHeaderShadow() {
 //     const header = document.querySelector('header');
+
+//     if (!header) return;
+
 //     if (window.scrollY >= 200) {
 //         header.style.boxShadow = '0 10px 30px -10px #020c1bb3';
 //     } else {
 //         header.style.boxShadow = 'none';
 //     }
-// });
+// }
 
 /* ========================================== dynamic footer year  ========================================== */
 const currentYear = new Date().getFullYear();

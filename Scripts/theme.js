@@ -38,6 +38,9 @@ class ThemeManager {
 
         // Save theme preference
         localStorage.setItem('theme', theme);
+        updateScrollToTopIcon(theme); // Update scroll to top icon based on theme
+        updateLogoIcon(theme); // Update logo icon based on theme
+        updateNavListIcon(theme); // Update navigation icon based on theme
     }
 
     toggleTheme() {
