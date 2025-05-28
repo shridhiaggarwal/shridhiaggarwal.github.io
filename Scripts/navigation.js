@@ -5,7 +5,7 @@ function toggleNavigation() {
     const navToggleButton = document.querySelector(".navToggleButton");
     const navList = document.querySelector(".navList");
     const navToggleIcon = navToggleButton?.querySelector('img');
-    const theme = document.documentElement.getAttribute('data-theme');
+    const theme = document.documentElement.getAttribute('data-theme') || 'dark';
 
     if (!navToggleButton || !navList || !navToggleIcon) return;
 

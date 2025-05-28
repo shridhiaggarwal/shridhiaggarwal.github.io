@@ -41,16 +41,13 @@ class ThemeManager {
         updateScrollToTopIcon(theme); // Update scroll to top icon based on theme
         updateLogoIcon(theme); // Update logo icon based on theme
         updateNavListIcon(theme); // Update navigation icon based on theme
+        updateExternalIcon(theme); // Update external link icon based on theme
     }
 
     toggleTheme() {
         const currentTheme = document.documentElement.getAttribute('data-theme');
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
         this.setTheme(newTheme);
-    }
-
-    getCurrentTheme() {
-        return document.documentElement.getAttribute('data-theme');
     }
 }
 

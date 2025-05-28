@@ -102,7 +102,7 @@ html::-webkit-scrollbar-thumb {
 }
 
 [data-theme="light"] .commonSection .sectionTitle:not(.viewResumeTitle) {
-  padding-bottom: 10px;
+  padding-bottom: 14px;
   border-bottom: 6px dashed var(--secondary-container);
   width: 400px;
   margin: 0 auto;
