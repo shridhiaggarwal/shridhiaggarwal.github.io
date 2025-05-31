@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
     <!-- meta tags -->
@@ -42,12 +42,12 @@
     <header>
         <div class="logo">
             <a href="#">
-                <img src="Images/logo.png" alt="Website Logo">
+                <img src="Images/logoDarkTheme.png" alt="Website Logo" id="logoImage">
             </a>
         </div>
         <nav>
-            <button class="toggleButton">
-                <img width="30" height="30" src="Images/menuBar.svg" alt="menuBar">
+            <button class="navToggleButton">
+                <img width="30" height="30" src="Images/header/menuBar.svg" alt="menuBar">
             </button>
             <ul class="navList">
                 <li>
@@ -79,25 +79,29 @@
                         <div class="navPill">Contact</div>
                     </a>
                 </li>
+                <li>
+                    <button id="themeToggle" class="themeToggleBtn" aria-label="Toggle theme">
+                        <img id="themeIcon" src="Images/header/moon.svg" alt="toggle theme mode" class="themeIcon">
+                        <span id="themeText">Dark</span>
+                    </button>
+                </li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <!-- home section -->
+        <!-- home or intro section -->
         <section id="stars" class="introSection">
             <div class="introSectionContent">
                 <div class="introHelloDiv">
                     <h1 class="introHello">Hello!</h1>
-                    <img class="introWaveImage" src="Images/wave.gif" alt="">
+                    <img class="introWaveImage" src="Images/intro/wave.gif" alt="">
                 </div>
                 <h2 class="introLine">I'm <span class="myName">Shridhi Aggarwal</span>, a dedicated front-end software
                     engineer who likes to craft beautiful interfaces and enjoyable experiences.</h2>
-                <!-- <h2 class="introLine">I'm <span class="myName">Shridhi Aggarwal</span>, a dedicated front-end software
-                    engineer who enjoys crafting beautiful web application frontends.</h2> -->
                 <div class="introContact">
                     <p>Get in touch</p>
-                    <img class="pointRightImage" src="Images/pointRight.png" alt="">
+                    <img class="pointRightImage" src="Images/intro/pointRight.png" alt="">
                     <div>
                         <a href="mailto:shridhiaggarwal.work@gmail.com" target="_blank" class="link">
                             <p class="introEmail">shridhiaggarwal.work@gmail.com</p>
@@ -106,24 +110,29 @@
                     </div>
                 </div>
             </div>
-            <!-- <img class="introPlanet" src="Images/planet.png" alt="planet image">
-            <img class="introRocket" src="Images/rocket.png" alt="rocket image">
-            <img class="introStarConstellation1" src="Images/starConstellation1.png" alt="star constellation image">
-            <img class="introStarConstellation2" src="Images/starConstellation2.png" alt="star constellation image 2"> -->
+            <!-- <img class="introPlanet" src="Images/intro/planet.png" alt="">
+            <img class="introRocket" src="Images/intro/rocket.png" alt="">
+            <img class="introStarConstellation1" src="Images/intro/starConstellation1.png" alt="">
+            <img class="introStarConstellation2" src="Images/intro/starConstellation2.png" alt=""> -->
+            <!-- <img class="introSun" src="Images/intro/sunClouds.png" alt="">
+            <img class="introClouds" src="Images/intro/clouds.png" alt=""> -->
+            <img class="introBirds" src="Images/intro/birds.png" alt="">
         </section>
 
 
         <!-- about section -->
         <section id="about" class="commonSection">
             <div class="sectionTitleBox">
-                <h2 class="sectionTitle">About</h2>
+                <h2 class="sectionTitle">About Me</h2>
                 <img class="LineImage" src="Images/line2.png" alt="">
             </div>
-            <p class="sectionContent aboutContent">Hello there! 👋 I'm Shridhi, a <strong>software engineer</strong>
+            <p class="sectionContent aboutContent">Hello there! 👋 I'm Shridhi, a <strong>senior software
+                    engineer</strong>
                 with
                 knowledge of JavaScript and TypeScript. My forte lies in <strong>frontend development</strong>, where I
                 excel in
-                React.js, Redux, and more. Seeing my work live on the web makes me happy. That is why I love FrontEnd! ✨
+                HTML, CSS, React.js, Redux, Vue, Nuxt and more. Seeing my work live on the web makes me happy. That is
+                why I love FrontEnd! ✨
             </p>
             <p class="sectionContent aboutContent">For the past couple of years, I've been a proud member of the
                 <strong>Compro Technologies</strong> team, where I've honed my skills and made a real impact. I've
@@ -346,8 +355,7 @@
                         </p>
                         <a href="https://github.com/shridhiaggarwal/Bakery-React-Project" target="_blank"
                             class="projectExternalLinks">
-                            <img class="projectGithubImage" src="Images/contacts/github-whiteCircle.svg"
-                                alt="Github Icon">
+                            <img class="projectGithubImage" src="Images/contacts/github-whiteCircle.svg" alt="Github">
                         </a>
                         <a href="https://bakery-react-project.vercel.app/" target="_blank" class="projectExternalLinks">
                             <img class="projectExternalImage" src="Images/externalLink.svg" alt="External Link Icon">
@@ -376,8 +384,7 @@
                         </p>
                         <a href="https://github.com/shridhiaggarwal/Portfolio-V1" target="_blank"
                             class="projectExternalLinks">
-                            <img class="projectGithubImage" src="Images/contacts/github-whiteCircle.svg"
-                                alt="Github Icon">
+                            <img class="projectGithubImage" src="Images/contacts/github-whiteCircle.svg" alt="Github">
                         </a>
                         <a href="#" target="_blank" class="projectExternalLinks">
                             <img class="projectExternalImage" src="Images/externalLink.svg" alt="External Link Icon">
@@ -414,8 +421,7 @@
                         </p>
                         <a href="https://github.com/shridhiaggarwal/Calculator" target="_blank"
                             class="projectExternalLinks">
-                            <img class="projectGithubImage" src="Images/contacts/github-whiteCircle.svg"
-                                alt="Github Icon">
+                            <img class="projectGithubImage" src="Images/contacts/github-whiteCircle.svg" alt="Github">
                         </a>
                         <a href="https://shridhiaggarwal.github.io/Calculator/" target="_blank"
                             class="projectExternalLinks">
@@ -445,8 +451,7 @@
                         </p>
                         <a href="https://github.com/compro-shridhi/todo-app" target="_blank"
                             class="projectExternalLinks">
-                            <img class="projectGithubImage" src="Images/contacts/github-whiteCircle.svg"
-                                alt="Github Icon">
+                            <img class="projectGithubImage" src="Images/contacts/github-whiteCircle.svg" alt="Github">
                         </a>
                         <a href="https://shridhi-todo-app.netlify.app/" target="_blank" class="projectExternalLinks">
                             <img class="projectExternalImage" src="Images/externalLink.svg" alt="External Link Icon">
@@ -487,8 +492,7 @@
                         </p>
                         <a href="https://github.com/shridhiaggarwal/Crypto_Watchlist_Project" target="_blank"
                             class="projectExternalLinks">
-                            <img class="projectGithubImage" src="Images/contacts/github-whiteCircle.svg"
-                                alt="Github Icon">
+                            <img class="projectGithubImage" src="Images/contacts/github-whiteCircle.svg" alt="Github">
                         </a>
                         <a href="https://cryptowatch-project.netlify.app/" target="_blank" class="projectExternalLinks">
                             <img class="projectExternalImage" src="Images/externalLink.svg" alt="External Link Icon">
@@ -568,7 +572,7 @@
                 </a>
                 <a href="https://github.com/shridhiaggarwal" target="_blank" class="link">
                     <div class="contactImagePillBox">
-                        <img src="Images/contacts/github-whiteCircle.svg" alt="Github Icon">
+                        <img src="Images/contacts/github-whiteCircle.svg" alt="Github logo">
                         <div class="contactPill">
                             Github
                         </div>
@@ -595,7 +599,12 @@
             alt="scroll to top button">
     </button>
 
-    <script src="Scripts/script.js"></script>
+    <script src="Scripts/theme.js"></script>
+    <script src="Scripts/stars.js"></script>
+    <script src="Scripts/navigation.js"></script>
+    <script src="Scripts/scrollToTop.js"></script>
+    <script src="Scripts/project.js"></script>
+    <script src="Scripts/common.js"></script>
 </body>
 
 </html>

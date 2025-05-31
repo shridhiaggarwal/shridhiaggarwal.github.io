@@ -2,15 +2,36 @@
   --sm: 576px;
   --md: 768px;
   --lg: 1024px;
+}
+
+[data-theme="light"] {
+  --background-color: #ffffff; /* white  */
+  --background-text: #000000; /* black */
+  --background-text2: #4a4a4a; /* Quartz */
+  --primary-container: #4a4a4a; /* dark-jungle-green */
+  --primary-text: #bababa; /* platinum - all pass with primary*/
+  --secondary-container: #00819d; /* cg blue */
+  --secondary-text: #ffffff; /* white */
+  --tertiary-container: #006b85; /* sea blue */
+  --tertiary-text: #ffffff; /* white */
   /* colors - scrollbar theme*/
-  --scroll-bar-color: #b0b0b0;
-  --scroll-bar-bg-color: #171c28;
-  /* colors - dark theme*/
-  --dark-jungle-green: #171c28;
-  --yinmn-blue: #2e538f;
-  --platinum: #e7e7e7;
-  --cadet-blue: #afafbf;
-  --dark-cornflower-blue: #1e407f;
+  --scroll-bar-color: #666666; /* Granite Gray */
+  --scroll-bar-bg-color: #ffffff; /* white */
+}
+
+[data-theme="dark"] {
+  --background-color: #171c28; /* dark-jungle-green */
+  --background-text: #e7e7e7; /* platinum */
+  --background-text2: #afafbf; /* cadet-blue - works with tertiary*/
+  --primary-container: #171c28; /* dark-jungle-green */
+  --primary-text: #e7e7e7; /* platinum - all pass with primary*/
+  --secondary-container: #2e538f; /* yinmn-blue */
+  --secondary-text: #e7e7e7; /* platinum - works AA with secondary*/
+  --tertiary-container: #1e407f; /* dark-cornflower-blue */
+  --tertiary-text: #e7e7e7; /* platinum - all pass with tertiary*/
+  /* colors - scrollbar theme*/
+  --scroll-bar-color: #b0b0b0; /* Silver Foil */
+  --scroll-bar-bg-color: #171c28; /* dark-jungle-green */
 }
 
 /* page start - 2.5 rem - 40px
@@ -28,9 +49,9 @@ page normal text - 1rem - 16px */
 body {
   height: 100%;
   margin: 0px;
-  background-color: var(--dark-jungle-green);
+  background-color: var(--background-color);
+  color: var(--background-text);
   font-family: "Roboto", sans-serif;
-  color: var(--platinum);
 }
 
 * {
@@ -80,6 +101,14 @@ html::-webkit-scrollbar-thumb {
   line-height: 1.5rem;
 }
 
+[data-theme="light"] .commonSection .sectionTitle:not(.viewResumeTitle) {
+  padding-bottom: 14px;
+  border-bottom: 6px dashed var(--secondary-container);
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
 .sectionSubtitle {
   font-size: 1.5rem;
   font-family: "Roboto", sans-serif;
@@ -88,7 +117,7 @@ html::-webkit-scrollbar-thumb {
 .sectionContent {
   font-family: "Andika", sans-serif;
   font-size: 1.125rem;
-  color: var(--cadet-blue);
+  color: var(--background-text2);
 }
 
 .link {
@@ -104,9 +133,8 @@ html::-webkit-scrollbar-thumb {
   display: none !important;
 }
 
-.highlightedText{
-  color: var(--platinum);
-  font-weight: bold;
+[data-theme="light"] .LineImage {
+  display: none !important;
 }
 
 /* ============================== header section css ============================== */
@@ -117,7 +145,8 @@ header {
   align-items: center;
   width: 100%;
   height: 72px;
-  background-color: var(--dark-jungle-green);
+  background-color: var(--background-color);
+  z-index: 9;
 }
 
 .logo {
@@ -136,22 +165,24 @@ header {
 }
 
 .navPill {
-  background-color: var(--yinmn-blue);
-  padding: 4px 16px;
+  background-color: var(--secondary-container);
+  color: var(--secondary-text);
+  padding: 8px 16px;
   border-radius: 16px;
   margin-right: 16px;
   transition: transform 0.5s;
 }
 
 .navPill:hover {
-  background-color: var(--dark-cornflower-blue);
+  background-color: var(--tertiary-container);
+  color: var(--tertiary-text);
 }
 
-.navlink:hover {
-  text-decoration: none;
+[data-theme="light"] .navlink {
+  color: var(--secondary-text);
 }
 
-.toggleButton {
+.navToggleButton {
   display: none;
   background-color: transparent;
   border: none;
@@ -159,7 +190,7 @@ header {
   margin-right: 16px;
 }
 
-.resumeWithImage{
+.resumeWithImage {
   display: flex;
   align-items: center;
 }
@@ -167,6 +198,37 @@ header {
 .resumeHeaderImage {
   height: 18px;
   margin-right: 8px;
+}
+
+.themeToggleBtn {
+  background-color: var(--secondary-container);
+  padding: 8px;
+  border: none;
+  border-radius: 50%;
+  margin-right: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.themeToggleBtn:hover {
+  background-color: var(--tertiary-container);
+  color: var(--tertiary-text);
+}
+
+.themeIcon {
+  width: 20px;
+  height: 20px;
+  fill: var(--secondary-text);
+}
+
+#themeText {
+  display: none;
+  color: var(--secondary-text);
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
 }
 
 /* ============================== home section css ============================== */
@@ -239,6 +301,12 @@ header {
   line-height: 0.75rem;
 }
 
+[data-theme="light"] .introEmail {
+  padding-bottom: 8px;
+  padding-top: 8px;
+  border-bottom: 4px dashed var(--secondary-container);
+}
+
 .introPlanet {
   position: absolute;
   top: 80px;
@@ -272,6 +340,39 @@ header {
   opacity: 1;
   transition: opacity 3s ease-in-out;
   /* animation: blink 6s infinite; */
+}
+
+[data-theme="light"] .introClouds {
+  position: absolute;
+  width: 400px;
+  top: 520px;
+  left: 16px;
+}
+
+[data-theme="dark"] .introClouds {
+  display: none;
+}
+
+[data-theme="light"] .introSun {
+  position: absolute;
+  width: 400px;
+  top: 80px;
+  right: 16px;
+}
+
+[data-theme="dark"] .introSun {
+  display: none;
+}
+
+[data-theme="light"] .introBirds {
+  position: absolute;
+  width: 300px;
+  top: 520px;
+  right: 1px;
+}
+
+[data-theme="dark"] .introBirds {
+  display: none;
 }
 
 @keyframes blink {
@@ -452,7 +553,7 @@ header {
 }
 
 .projectContent {
-  padding-bottom: 64px;
+  padding-bottom: 48px;
 }
 
 .projectContentWithoutImage {
@@ -466,9 +567,10 @@ header {
 }
 
 .projectSkillsPill {
-  background-color: var(--yinmn-blue);
-  padding: 8px 16px;
-  border-radius: 16px;
+  background-color: var(--primary-text);
+  color: var(--primary-container);
+  padding: 4px 16px;
+  border-radius: 8px;
   margin-right: 16px;
   margin-bottom: 16px;
 }
@@ -482,8 +584,8 @@ header {
 #showHideButton {
   font-family: "Roboto", sans-serif;
   font-size: 1.125rem;
-  color: var(--platinum);
-  background-color: var(--yinmn-blue);
+  background-color: var(--secondary-container);
+  color: var(--secondary-text);
   padding: 12px 32px;
   border: none;
   border-radius: 24px;
@@ -492,12 +594,14 @@ header {
 }
 
 #showHideButton:hover {
-  background-color: var(--dark-cornflower-blue);
+  background-color: var(--tertiary-container);
+  color: var(--tertiary-text);
 }
 
 /* ============================== view resume section css ============================== */
 .viewResumeSection {
-  background-color: var(--yinmn-blue);
+  background-color: var(--secondary-container);
+  color: var(--secondary-text);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -541,7 +645,8 @@ header {
 }
 
 .contactPill {
-  background-color: var(--yinmn-blue);
+  background-color: var(--secondary-container);
+  color: var(--secondary-text);
   padding: 8px 24px 8px 32px;
   border-radius: 16px;
   margin-left: -20px;
@@ -550,6 +655,10 @@ header {
 
 .contactImagePillBox:hover {
   transform: scale(1.05);
+}
+
+[data-theme="light"] .contactImages a {
+  color: var(--secondary-text);
 }
 
 /* ============================== footer section css ============================== */
@@ -575,8 +684,13 @@ header {
   z-index: 999;
 }
 
-#scrollToTopBtn img{
+#scrollToTopBtn img {
   width: 100%;
+  height: 100%;
+}
+
+[data-theme="light"] #scrollToTopBtn img {
+  width: 64px;
   height: 100%;
 }
 
@@ -589,6 +703,9 @@ header {
   .introSectionContent {
     padding: 40px;
   }
+  /* [data-theme="light"] .introClouds {
+    top: 540px;
+  } */
   .experienceBoxLeftSide {
     padding-right: 40px;
   }
@@ -604,6 +721,9 @@ header {
   }
   .introSectionContent {
     padding: 40px;
+  }
+  [data-theme="light"] .introClouds {
+    display: none;
   }
   .experienceBoxLeftSide {
     padding-right: 40px;
@@ -626,6 +746,12 @@ header {
 }
 
 @media screen and (max-width: 768px) {
+  [data-theme="light"] .introSun {
+    display: none;
+  }
+  [data-theme="light"] .introBirds {
+    display: none;
+  }
   .experienceBox {
     flex-direction: column;
   }
@@ -644,7 +770,7 @@ header {
     flex: 1;
     text-align: end;
   }
-  header{
+  header {
     z-index: 1;
   }
   .navList {
@@ -653,18 +779,30 @@ header {
     top: 72px;
     left: 0;
     width: 100%;
-    background-color: var(--dark-jungle-green);
+    background-color: var(--background-color);
+    color: var(--background-text);
     display: none;
   }
   .navPill {
-    background-color: transparent;
+    /* background-color: transparent; */
     padding: 16px 24px;
     border-radius: 0px;
     margin-right: 0px;
     transition: transform 0.5s;
   }
-  .toggleButton {
+  .navToggleButton {
     display: block;
+  }
+  #themeToggle{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    padding: 16px 24px;
+    border-radius: 0px;
+  }
+  #themeText {
+    display: flex;
+    margin-left: 8px;
   }
 }
 
@@ -674,6 +812,9 @@ header {
   }
   .sectionTitle {
     font-size: 1.5rem;
+  }
+  [data-theme="light"] .commonSection .sectionTitle:not(.viewResumeTitle) {
+    width: unset;
   }
   .sectionSubtitle {
     font-size: 1.125rem;
@@ -689,7 +830,7 @@ header {
     font-size: 1.5rem;
     line-height: 2.5rem;
   }
-  .introWaveImage{
+  .introWaveImage {
     width: 32px;
     height: 32px;
     margin-top: -8px;
@@ -711,6 +852,9 @@ header {
     object-fit: cover;
     width: 100%;
   }
+  [data-theme="light"] .LineImage {
+    display: none !important;
+  }
   .aboutContent {
     text-align: initial;
   }
@@ -724,16 +868,16 @@ header {
   .companyDuration {
     flex: auto;
   }
-  #showHideButton{
+  #showHideButton {
     font-size: 1rem;
   }
   .contactImages {
     flex-wrap: wrap;
     grid-gap: 16px 0px;
   }
-  #scrollToTopBtn {
+  /* #scrollToTopBtn {
     width: 40px;
     height: 40px;
     bottom: 40px;
-  }
+  } */
 }
