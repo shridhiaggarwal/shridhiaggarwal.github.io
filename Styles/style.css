@@ -224,6 +224,13 @@ header {
   fill: var(--secondary-text);
 }
 
+#themeText {
+  display: none;
+  color: var(--secondary-text);
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+}
+
 /* ============================== home section css ============================== */
 .introSection {
   width: 100%;
@@ -785,6 +792,17 @@ header {
   }
   .navToggleButton {
     display: block;
+  }
+  #themeToggle{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    padding: 16px 24px;
+    border-radius: 0px;
+  }
+  #themeText {
+    display: flex;
+    margin-left: 8px;
   }
 }
 

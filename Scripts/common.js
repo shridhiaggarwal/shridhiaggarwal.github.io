@@ -6,17 +6,20 @@ function setCurrentYear() {
 
 //update external link icon based on theme
 function updateExternalIcon(theme) {
-    const externalLinkImage = document.getElementById('externalLinkImage');
-    if (!externalLinkImage) {
-        console.warn('project external icon not found');
+    const externalLinkImages = document.querySelectorAll('.projectExternalImage');
+
+    if (externalLinkImages.length === 0) {
+        console.warn('No elements with class "projectExternalImage" found.');
         return;
     }
 
-    if (theme === 'dark') {
-        externalLinkImage.src = 'Images/externalLink.svg';
-    } else {
-        externalLinkImage.src = 'Images/externalLinkBlack.svg';
-    }
+    const newSrc = theme === 'dark'
+        ? 'Images/externalLink.svg'
+        : 'Images/externalLinkBlack.svg';
+
+    externalLinkImages.forEach(img => {
+        img.src = newSrc;
+    });
 }
 
 function updateLogoIcon(theme) {

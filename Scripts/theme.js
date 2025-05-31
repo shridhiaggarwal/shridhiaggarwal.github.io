@@ -19,6 +19,7 @@ class ThemeManager {
     setTheme(theme) {
         const html = document.documentElement;
         const themeIcon = document.getElementById('themeIcon');
+        const themeText = document.getElementById('themeText');
 
         // Set the data-theme attribute
         html.setAttribute('data-theme', theme);
@@ -28,10 +29,12 @@ class ThemeManager {
             if (theme === 'dark') {
                 themeIcon.src = 'Images/header/sun.svg'; // Show sun icon in dark mode
                 themeIcon.alt = 'Light mode';
+                themeText.textContent = 'Light';
                 showStars(); // Call stars function if it exists
             } else {
                 themeIcon.src = 'Images/header/moon.svg'; // Show moon icon in light mode
                 themeIcon.alt = 'Dark mode';
+                themeText.textContent = 'Dark';
                 hideStars(); // Call createStars function if it exists
             }
         }

@@ -51,6 +51,12 @@ function hideStars() {
 // Function to show stars container
 function showStars() {
     const starContainers = document.querySelectorAll('#stars i');
+
+    if (starContainers.length === 0) {
+        stars(); // Call the stars function to create stars if none exist
+        return;
+    }
+
     for (let i = 0; i < starContainers.length; i++) {
         starContainers[i].style.display = 'block'; // show the stars instead of creating them
     }

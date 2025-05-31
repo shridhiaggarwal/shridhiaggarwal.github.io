@@ -31,6 +31,7 @@ function handleNavListVisibility() {
         navList.style.display = "none";
         navListOpen = false;
     }
+    updateNavListIcon();
 };
 
 function updateNavListIcon(theme) {
