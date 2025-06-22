@@ -491,10 +491,12 @@ header {
 
 .companyTitle {
   padding-bottom: 8px;
+  font-weight: normal;
 }
 
 .designationTitle {
   padding-bottom: 8px;
+  font-weight: normal;
 }
 
 .companyWorkList {
@@ -532,6 +534,10 @@ header {
 }
 
 .projectTitle {
+  font-weight: normal;
+}
+
+.projectHeader {
   display: flex;
   align-items: center;
   padding-top: 8px;
@@ -793,7 +799,7 @@ header {
   .navToggleButton {
     display: block;
   }
-  #themeToggle{
+  #themeToggle {
     width: 100%;
     display: flex;
     justify-content: start;
